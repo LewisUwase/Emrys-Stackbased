@@ -1,0 +1,21 @@
+# reverse_string.emrys
+# Takes a custom order and announces it backwards.
+# FLIPORDER reverses the character buffer on the stack
+# so popping gives characters in reverse order.
+
+ANNOUNCE "Enter a string: "
+CUSTOMORDER
+FLIPORDER
+
+LOOP:
+    IFEMPTY DONE
+    SWITCHORDER
+    CALLOUT
+    SERVE 1
+    NOPICKLE
+    GOTO LOOP
+
+DONE:
+    TOSS
+    LINEBREAK
+    CLOSING

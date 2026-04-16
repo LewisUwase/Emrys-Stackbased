@@ -1,0 +1,19 @@
+# cat.emrys
+# Takes a custom order (line of text) and reads it back exactly.
+# CUSTOMORDER pushes each character as ASCII, then pushes the length N on top.
+# IFEMPTY peeks at N without popping — loop until the counter hits zero.
+
+CUSTOMORDER
+
+LOOP:
+    IFEMPTY DONE
+    SWITCHORDER
+    CALLOUT
+    SERVE 1
+    NOPICKLE
+    GOTO LOOP
+
+DONE:
+    TOSS
+    LINEBREAK
+    CLOSING

@@ -1,0 +1,26 @@
+# repeater.emrys
+# Repeats a character N times.
+# Enter the ASCII code of the character (e.g. 65 = A, 42 = *)
+# then the number of times to repeat it.
+# Stack after both ORDERs (top->bottom): N  charCode
+
+ANNOUNCE "Enter ASCII code of character to repeat (e.g. 65 for A): "
+ORDER
+ANNOUNCE "Enter number of times to repeat: "
+ORDER
+
+LOOP:
+    IFEMPTY DONE
+    SWITCHORDER
+    REFILL
+    CALLOUT
+    SWITCHORDER
+    SERVE 1
+    NOPICKLE
+    GOTO LOOP
+
+DONE:
+    TOSS
+    TOSS
+    LINEBREAK
+    CLOSING

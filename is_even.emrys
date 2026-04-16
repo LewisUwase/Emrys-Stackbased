@@ -1,0 +1,22 @@
+# is_even.emrys
+# Checks whether an integer is even or odd.
+# Subtracts 2 repeatedly until the number hits 0 (even) or goes negative (odd).
+
+ANNOUNCE "Enter an integer: "
+ORDER
+IFEMPTY EVEN
+
+LOOP:
+    SERVE 2
+    NOPICKLE
+    IFEMPTY EVEN
+    IFMORE LOOP
+
+ANNOUNCE "odd"
+LINEBREAK
+CLOSING
+
+EVEN:
+ANNOUNCE "even"
+LINEBREAK
+CLOSING

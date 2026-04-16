@@ -1,0 +1,21 @@
+# is_palindrome.emrys
+# Checks whether the customer's order reads the same forwards and backwards.
+# DOUBLECUP makes two copies of the string on the stack.
+# FLIPORDER reverses the top copy.
+# SAMETHING compares both copies and pushes 1 (same) or 0 (different).
+
+ANNOUNCE "Enter a string: "
+CUSTOMORDER
+DOUBLECUP
+FLIPORDER
+SAMETHING
+
+IFEMPTY NOTPALINDROME
+ANNOUNCE "palindrome"
+LINEBREAK
+CLOSING
+
+NOTPALINDROME:
+ANNOUNCE "not a palindrome"
+LINEBREAK
+CLOSING

@@ -1,0 +1,6 @@
+# helloworld.emrys
+# The classic first program — announces a greeting and closes.
+
+ANNOUNCE "Hello, World!"
+LINEBREAK
+CLOSING

@@ -1,0 +1,12 @@
+# multiply.emrys
+# Takes two numbers from the customer and prints their product.
+
+ANNOUNCE "Enter first number: "
+ORDER
+ANNOUNCE "Enter second number: "
+ORDER
+EXTRAEXTRA
+ANNOUNCE "Result: "
+RECEIPT
+LINEBREAK
+CLOSING
