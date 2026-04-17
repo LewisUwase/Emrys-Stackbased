@@ -1,7 +1,7 @@
 # Emrys — The Immortal Language
 
 Emrys is a stack-based interpreted language written in Python.  
-Named after the Welsh word for *immortal*, Emrys keeps things simple — no variables, no types, no fluff. Just a stack, some instructions, and your imagination.
+Named after the Welsh word for *immortal*, Emrys keeps things simple: no variables, no types. Just a stack, some instructions, and your imagination.
 
 Run any Emrys program with:
 ```bash
