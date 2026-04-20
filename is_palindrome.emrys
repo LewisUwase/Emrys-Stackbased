@@ -1,12 +1,14 @@
 # is_palindrome.emrys
-# Checks whether the customer's order reads the same forwards and backwards.
-# DOUBLECUP makes two copies of the string on the stack.
-# FLIPORDER reverses the top copy.
-# SAMETHING compares both copies and pushes 1 (same) or 0 (different).
+# Checks whether a string is a palindrome.
+#
+# CUSTOMORDER  — read the string once
+# COPYSTRING   — make a second copy (one job: copy)
+# FLIPORDER    — reverse the top copy (one job: reverse)
+# SAMETHING    — compare both copies (one job: compare)
 
 ANNOUNCE "Enter a string: "
 CUSTOMORDER
-DOUBLECUP
+COPYSTRING
 FLIPORDER
 SAMETHING
 

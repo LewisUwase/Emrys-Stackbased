@@ -1,26 +1,27 @@
 # repeater.emrys
-# Repeats a character N times.
-# Enter the ASCII code of the character (e.g. 65 = A, 42 = *)
-# then the number of times to repeat it.
-# Stack after both ORDERs (top->bottom): N  charCode
+# Repeats a single character N times.
+# ORDERCHAR reads one character and pushes its ASCII code.
+# The loop uses REFILL to keep the char alive while printing.
 
-ANNOUNCE "Enter ASCII code of character to repeat (e.g. 65 for A): "
-ORDER
+ANNOUNCE "Enter a character to repeat: "
+ORDERCHAR
 ANNOUNCE "Enter number of times to repeat: "
 ORDER
 
+# Stack (top->bottom): N  charCode
+
 LOOP:
     IFEMPTY DONE
-    SWITCHORDER
-    REFILL
-    CALLOUT
-    SWITCHORDER
+    SWITCHORDER        # bring charCode to top
+    REFILL             # duplicate it — one copy to print, one to keep
+    CALLOUT            # print one copy
+    SWITCHORDER        # bring N back to top
     SERVE 1
-    NOPICKLE
+    NOPICKLE           # N -= 1
     GOTO LOOP
 
 DONE:
-    TOSS
-    TOSS
+    TOSS               # discard N
+    TOSS               # discard charCode
     LINEBREAK
     CLOSING
